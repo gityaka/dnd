@@ -70,6 +70,8 @@ export interface Props extends Responders {
   // options to exert more control over autoScroll
   // eslint-disable-next-line react/no-unused-prop-types
   autoScrollerOptions?: PartialAutoScrollerOptions;
+  // set the position of the draggable from the draggable itself
+  setPositionFromDraggable?: boolean;
 }
 
 const createResponders = (props: Props): Responders => ({
@@ -189,6 +191,9 @@ export default function App(props: Props) {
 
   const focusMarshal: FocusMarshal = useFocusMarshal(contextId);
 
+  const setPositionFromDraggable: boolean =
+    props.setPositionFromDraggable ?? false;
+
   const store: Store = useMemo<Store>(
     () =>
       createStore({
@@ -198,6 +203,7 @@ export default function App(props: Props) {
         focusMarshal,
         getResponders,
         styleMarshal,
+        setPositionFromDraggable,
       }),
     [
       announce,
@@ -206,6 +212,7 @@ export default function App(props: Props) {
       focusMarshal,
       getResponders,
       styleMarshal,
+      setPositionFromDraggable,
     ],
   );
 

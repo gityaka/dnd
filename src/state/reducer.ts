@@ -82,13 +82,26 @@ export default (state: State = idle, action: Action): State => {
       state.phase === 'IDLE',
       'INITIAL_PUBLISH must come after a IDLE phase',
     );
-    const { critical, clientSelection, viewport, dimensions, movementMode } =
-      action.payload;
+    const {
+      critical,
+      viewport,
+      dimensions,
+      movementMode,
+      setPositionFromDraggable,
+    } = action.payload;
+    let { clientSelection } = action.payload;
 
     const draggable: DraggableDimension =
       dimensions.draggables[critical.draggable.id];
     const home: DroppableDimension =
       dimensions.droppables[critical.droppable.id];
+
+    if (setPositionFromDraggable) {
+      clientSelection = {
+        x: draggable.client.borderBox.x,
+        y: draggable.client.borderBox.y + draggable.client.borderBox.height / 2,
+      };
+    }
 
     const client: ClientPositions = {
       selection: clientSelection,

@@ -56,6 +56,7 @@ export interface InitialPublishArgs {
   clientSelection: Position;
   viewport: Viewport;
   movementMode: MovementMode;
+  setPositionFromDraggable: boolean;
 }
 
 export interface InitialPublishAction {
