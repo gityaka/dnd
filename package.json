@@ -1,12 +1,13 @@
 {
-  "name": "@hello-pangea/dnd",
+  "name": "@gityaka/dnd",
   "version": "17.0.0",
   "private": false,
   "description": "Beautiful and accessible drag and drop for lists with React",
   "author": "Alex Reardon <areardon@atlassian.com>",
   "maintainers": [
     "Gabriel Santerre <gab@100terres.com>",
-    "Reece Carolan <reece@hellopangea.com>"
+    "Reece Carolan <reece@hellopangea.com>",
+    "Matt Greathouse <matt@mattgreat.house>"
   ],
   "keywords": [
     "drag and drop",
@@ -22,10 +23,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hello-pangea/dnd.git"
+    "url": "https://github.com/gityaka/dnd.git"
   },
   "bugs": {
-    "url": "https://github.com/hello-pangea/dnd/issues"
+    "url": "https://github.com/gityaka/dnd/issues"
   },
   "main": "dist/dnd.cjs.js",
   "module": "dist/dnd.esm.js",
