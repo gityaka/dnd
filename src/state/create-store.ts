@@ -53,6 +53,7 @@ interface Args {
   getResponders: () => Responders;
   announce: Announce;
   autoScroller: AutoScroller;
+  setPositionFromDraggable: boolean;
 }
 
 export default ({
@@ -62,6 +63,7 @@ export default ({
   getResponders,
   announce,
   autoScroller,
+  setPositionFromDraggable,
 }: Args): Store =>
   createStore(
     reducer,
@@ -94,7 +96,7 @@ export default ({
         // dimension registration changes in response to reordering
         dimensionMarshalStopper(dimensionMarshal),
         // Fire application responders in response to drag changes
-        lift(dimensionMarshal),
+        lift(dimensionMarshal, setPositionFromDraggable),
         drop,
         // When a drop animation finishes - fire a drop complete
         dropAnimationFinish,

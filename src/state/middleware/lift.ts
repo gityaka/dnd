@@ -11,7 +11,10 @@ import {
 } from '../action-creators';
 import validateDimensions from './util/validate-dimensions';
 
-export default (marshal: DimensionMarshal): Middleware =>
+export default (
+    marshal: DimensionMarshal,
+    setPositionFromDraggable: boolean,
+  ): Middleware =>
   ({ getState, dispatch }) =>
   (next) =>
   (action) => {
@@ -61,6 +64,7 @@ export default (marshal: DimensionMarshal): Middleware =>
         clientSelection,
         movementMode,
         viewport,
+        setPositionFromDraggable,
       }),
     );
   };
