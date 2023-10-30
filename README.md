@@ -1,23 +1,17 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/2182637/53611918-54c1ff80-3c24-11e9-9917-66ac3cef513d.png" alt="react beautiful dnd logo" />
-</p>
-<h1 align="center">@hello-pangea/dnd</h1>
+<h1 align="center">@yakabod/dnd</h1>
 
 <div align="center">
 
 **Beautiful** and **accessible** drag and drop for lists with [`React`](https://facebook.github.io/react/)
 
-[![CircleCI branch](https://img.shields.io/circleci/project/github/hello-pangea/dnd/main.svg)](https://circleci.com/gh/hello-pangea/dnd/tree/main)
-[![npm](https://img.shields.io/npm/v/@hello-pangea/dnd.svg)](https://www.npmjs.com/package/@hello-pangea/dnd)
-[![Discord](https://img.shields.io/discord/1007763479010234398?color=blue)](https://discord.gg/zKhPpmvCEv)
+[![npm](https://img.shields.io/npm/v/@yakabod/dnd.svg)](https://www.npmjs.com/package/@yakabod/dnd)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-blue.svg)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-blue.svg)](http://commitizen.github.io/cz-cli/)
-
-![quote application example](https://user-images.githubusercontent.com/2182637/53614150-efbed780-3c2c-11e9-9204-a5d2e746faca.gif)
-
-[Play with this example if you want!](https://dnd.hellopangea.com/?path=/story/examples-board--simple)
-
 </div>
+
+## Info
+
+This is a fork of [@hello-pangea/dnd](https://github.com/hello-pangea/dnd).
+This fork was created to address synchronization issues between the mouse cursor and the draggable item.
 
 ## Core characteristics
 
@@ -29,19 +23,9 @@
 - [Unopinionated styling](/docs/guides/preset-styles.md)
 - No creation of additional wrapper dom nodes - flexbox and focus management friendly!
 
-## Star History
-
-<a href="https://star-history.com/#hello-pangea/dnd&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hello-pangea/dnd&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hello-pangea/dnd&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hello-pangea/dnd&type=Date" />
- </picture>
-</a>
-
 ## Get started 👩‍🏫
 
-Alex Reardon has created [a free course on `egghead.io` 🥚](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) (using [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)) to help you get started with `@hello-pangea/dnd` as quickly as possible.
+Alex Reardon has created [a free course on `egghead.io` 🥚](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) (using [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)) to help you get started with `@yakabod/dnd` as quickly as possible.
 
 [![course-logo](https://user-images.githubusercontent.com/2182637/43372837-8c72d3f8-93e8-11e8-9d92-a82adde7718f.png)](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd)
 
@@ -68,19 +52,19 @@ Alex Reardon has created [a free course on `egghead.io` 🥚](https://egghead.io
 - 🌲 Tree support through the [`@atlaskit/tree`](https://atlaskit.atlassian.com/packages/confluence/tree) package
 - A `<Droppable />` list can be a scroll container (without a scrollable parent) or be the child of a scroll container (that also does not have a scrollable parent)
 - Independent nested lists - a list can be a child of another list, but you cannot drag items from the parent list into a child list
-- Server side rendering (SSR) compatible
+- Server side rendering (SSR) compatible - see [resetServerContext()](/docs/api/reset-server-context.md)
 - Plays well with [nested interactive elements](/docs/api/draggable.md#interactive-child-elements-within-a-draggable-) by default
 
 ## Motivation 🤔
 
-`@hello-pangea/dnd` exists to create beautiful drag and drop for lists that anyone can use - even people who cannot see. For a good overview of the history and motivations of the project you can take a look at these external resources:
+`@yakabod/dnd` exists to create beautiful drag and drop for lists that anyone can use - even people who cannot see. For a good overview of the history and motivations of the project you can take a look at these external resources:
 
 - 📖 [Rethinking drag and drop](https://medium.com/@alexandereardon/rethinking-drag-and-drop-d9f5770b4e6b)
 - 🎧 [React podcast: fast, accessible and beautiful drag and drop](https://reactpodcast.simplecast.fm/17)
 
 ## Not for everyone ✌️
 
-There are a lot of libraries out there that allow for drag and drop interactions within React. Most notable of these is the amazing [`react-dnd`](https://github.com/react-dnd/react-dnd). It does an incredible job at providing a great set of drag and drop primitives which work especially well with the [wildly inconsistent](https://www.quirksmode.org/blog/archives/2009/09/the_html5_drag.html) html5 drag and drop feature. `@hello-pangea/dnd` is a higher level abstraction specifically built for lists (vertical, horizontal, movement between lists, nested lists and so on). Within that subset of functionality `@hello-pangea/dnd` offers a powerful, natural and beautiful drag and drop experience. However, it does not provide the breadth of functionality offered by `react-dnd`. One shortcoming is that grid layouts are not supported (yet). So `@hello-pangea/dnd` might not be for you depending on what your use case is.
+There are a lot of libraries out there that allow for drag and drop interactions within React. Most notable of these is the amazing [`react-dnd`](https://github.com/react-dnd/react-dnd). It does an incredible job at providing a great set of drag and drop primitives which work especially well with the [wildly inconsistent](https://www.quirksmode.org/blog/archives/2009/09/the_html5_drag.html) html5 drag and drop feature. `@yakabod/dnd` is a higher level abstraction specifically built for lists (vertical, horizontal, movement between lists, nested lists and so on). Within that subset of functionality `@yakabod/dnd` offers a powerful, natural and beautiful drag and drop experience. However, it does not provide the breadth of functionality offered by `react-dnd`. One shortcoming is that grid layouts are not supported (yet). So `@yakabod/dnd` might not be for you depending on what your use case is.
 
 ## Documentation 📖
 
@@ -110,6 +94,7 @@ There are a lot of libraries out there that allow for drag and drop interactions
 - [`<DragDropContext />`](/docs/api/drag-drop-context.md) - _Wraps the part of your application you want to have drag and drop enabled for_
 - [`<Droppable />`](/docs/api/droppable.md) - _An area that can be dropped into. Contains `<Draggable />`s_
 - [`<Draggable />`](/docs/api/draggable.md) - _What can be dragged around_
+- [`resetServerContext()`](/docs/api/reset-server-context.md) - _Utility for server side rendering (SSR)_
 
 ### Guides 🗺
 
@@ -129,44 +114,23 @@ There are a lot of libraries out there that allow for drag and drop interactions
 - [Avoiding image flickering](/docs/guides/avoiding-image-flickering.md)
 - [Non-visible preset styles](/docs/guides/preset-styles.md)
 - [How we detect scroll containers](/docs/guides/how-we-detect-scroll-containers.md)
-- [How we use dom events](/docs/guides/how-we-use-dom-events.md) - _Useful if you need to build on top of `@hello-pangea/dnd`_
+- [How we use dom events](/docs/guides/how-we-use-dom-events.md) - _Useful if you need to build on top of `@yakabod/dnd`_
 - [Adding `<Draggable />`s during a drag (11.x behaviour)](/docs/guides/changes-while-dragging.md) - _⚠️ Advanced_
 - [Setting up Content Security Policy](/docs/guides/content-security-policy.md)
-
-### Patterns 👷‍
-
-- [Virtual lists 👾](/docs/patterns/virtual-lists.md)
-- [Multi drag](/docs/patterns/multi-drag.md)
-- [Tables](/docs/patterns/tables.md)
-- [Reparenting a `<Draggable />`](/docs/guides/reparenting.md) - _Using our cloning API or your own portal_
-
-### Support 👩‍⚕️
-
-- [Engineering health](/docs/support/engineering-health.md)
-- [Community and addons](/docs/support/community-and-addons.md)
-- [Release notes and changelog](https://github.com/hello-pangea/dnd/releases)
-- [Upgrading](/docs/support/upgrading.md)
-- [Road map](https://github.com/hello-pangea/dnd/issues)
-- [Media](/docs/support/media.md)
 
 ## Creator ✍️
 
 Alex Reardon [@alexandereardon](https://twitter.com/alexandereardon)
 
-> Alex is no longer personally maintaning this project. The other wonderful maintainers are carrying this project forward.
+> Alex is no longer personally maintaining this project. The other wonderful maintainers are carrying this project forward.
 
 ## Maintainers 🛠️
 
 - Gabriel Santerre [@100terres](https://github.com/100terres)
 - Reece Carolan [@Xhale1](https://github.com/Xhale1)
+- Matt Greathouse [@matt-greathouse](https://github.com/matt-greathouse)
 - Many [@Atlassian](https://twitter.com/Atlassian)'s have contributed to the original [`react-beautiful-dnd`](https://github.com/atlassian/react-beautiful-dnd). _Atlassian is no longer involved with this project._
 
 ## Collaborators 🤝
 
 - Bogdan Chadkin [@IAmTrySound](https://twitter.com/IAmTrySound)
-
-## Thanks 🤗
-
-<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
-
-Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
