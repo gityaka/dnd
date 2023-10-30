@@ -26,6 +26,8 @@ export interface DragDropContextProps extends Responders {
    * Customize auto scroller
    */
   autoScrollerOptions?: PartialAutoScrollerOptions;
+  // set the position of the draggable from the draggable itself
+  setPositionFromDraggable?: boolean;
 }
 
 // Reset any context that gets persisted across server side renders
@@ -47,6 +49,8 @@ export default function DragDropContext(props: DragDropContextProps) {
   const contextId: ContextId = useUniqueContextId();
   const dragHandleUsageInstructions: string =
     props.dragHandleUsageInstructions || preset.dragHandleUsageInstructions;
+  const setPositionFromDraggable: boolean =
+    props.setPositionFromDraggable ?? false;
 
   // We need the error boundary to be on the outside of App
   // so that it can catch any errors caused by App
@@ -66,6 +70,7 @@ export default function DragDropContext(props: DragDropContextProps) {
           onDragUpdate={props.onDragUpdate}
           onDragEnd={props.onDragEnd}
           autoScrollerOptions={props.autoScrollerOptions}
+          setPositionFromDraggable={setPositionFromDraggable}
         >
           {props.children}
         </App>

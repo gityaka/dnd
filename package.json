@@ -1,6 +1,6 @@
 {
   "name": "@yakabod/dnd",
-  "version": "16.3.1",
+  "version": "16.3.2",
   "private": false,
   "description": "Beautiful and accessible drag and drop for lists with React",
   "author": "Alex Reardon <areardon@atlassian.com>",
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gityaka/dnd.git"
+    "url": "git+https://github.com/gityaka/dnd.git"
   },
   "bugs": {
     "url": "https://github.com/gityaka/dnd/issues"
@@ -211,5 +211,10 @@
   "jest-junit": {
     "output": "test-reports/junit/js-test-results.xml"
   },
-  "packageManager": "pnpm@8.6.10"
+  "packageManager": "pnpm@8.6.10",
+  "homepage": "https://github.com/gityaka/dnd#readme",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  }
 }
