@@ -204,14 +204,10 @@
   "jest-junit": {
     "output": "test-reports/junit/js-test-results.xml"
   },
-<<<<<<< HEAD
-  "packageManager": "pnpm@9.15.2"
-=======
-  "packageManager": "pnpm@8.6.10",
+  "packageManager": "pnpm@9.15.2",
   "homepage": "https://github.com/gityaka/dnd#readme",
   "directories": {
     "doc": "docs",
     "test": "test"
   }
->>>>>>> c953787 (feat: update drag drop context props)
 }
