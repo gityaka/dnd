@@ -2,13 +2,9 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import type { Responders, ContextId, Sensor } from '../../types';
 import ErrorBoundary from './error-boundary';
-import { warning } from '../../dev-warning';
 import preset from '../../screen-reader-message-preset';
 import App from './app';
-import useUniqueContextId, {
-  resetDeprecatedUniqueContextId,
-} from './use-unique-context-id';
-import { resetDeprecatedUniqueId } from '../use-unique-id';
+import useUniqueContextId from './use-unique-context-id';
 import { PartialAutoScrollerOptions } from '../../state/auto-scroller/fluid-scroller/auto-scroller-options-types';
 
 export interface DragDropContextProps extends Responders {
@@ -28,21 +24,6 @@ export interface DragDropContextProps extends Responders {
   autoScrollerOptions?: PartialAutoScrollerOptions;
   // set the position of the draggable from the draggable itself
   setPositionFromDraggable?: boolean;
-}
-
-// Reset any context that gets persisted across server side renders
-export function resetServerContext() {
-  // The useId hook is only available in React 18+
-  if ('useId' in React) {
-    warning(
-      `It is not necessary to call resetServerContext when using React 18+`,
-    );
-
-    return;
-  }
-
-  resetDeprecatedUniqueContextId();
-  resetDeprecatedUniqueId();
 }
 
 export default function DragDropContext(props: DragDropContextProps) {

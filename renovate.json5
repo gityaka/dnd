@@ -1,11 +1,18 @@
 {
   extends: ["config:base", ":prConcurrentLimitNone"],
 
+  timezone: "America/New_York",
+  schedule: ["before 6am"],
+
   commitMessageAction: "update",
   commitMessagePrefix: "chore(deps):",
   labels: ["dependencies"],
 
   packageRules: [
+    {
+      matchCategories: ["ci"],
+      commitMessagePrefix: "ci:",
+    },
     {
       matchManagers: ["npm"],
       matchDepTypes: ["dependencies"],
@@ -18,32 +25,28 @@
       commitMessagePrefix: "chore(dev-deps):",
     },
     {
-      groupName: "all non-major development dependencies",
+      groupName: "bump all non-major development dependencies",
       groupSlug: "all-dev-minor-patch",
       matchManagers: ["npm"],
       matchDepTypes: ["devDependencies"],
       matchUpdateTypes: ["minor", "patch"],
       matchPackagePatterns: ["*"],
+      commitMessagePrefix: "chore(dev-deps):",
+    },
+    {
+      groupName: "bump eslint dependencies",
+      groupSlug: "all-eslint-major",
+      matchManagers: ["npm"],
+      matchDepTypes: ["devDependencies"],
+      matchUpdateTypes: ["major"],
+      packagePatterns: [".*eslint.*"],
+      commitMessagePrefix: "chore(dev-deps):",
     },
     {
       matchManagers: ["npm"],
       matchDepTypes: ["peerDependencies"],
       rangeStrategy: "widen",
       commitMessagePrefix: "chore(peer-deps):",
-    },
-
-    // to support previous react version
-    {
-      "matchPackageNames": ["@testing-library/react-16-17"],
-      "allowedVersions": "<13.0.0",
-    },
-    {
-      "matchPackageNames": ["react-16", "react-dom-16"],
-      "allowedVersions": "<17.0.0",
-    },
-    {
-      "matchPackageNames": ["react-17", "react-dom-17"],
-      "allowedVersions": "<18.0.0",
     },
   ],
 }

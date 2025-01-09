@@ -23,6 +23,16 @@ This fork was created to address synchronization issues between the mouse cursor
 - [Unopinionated styling](/docs/guides/preset-styles.md)
 - No creation of additional wrapper dom nodes - flexbox and focus management friendly!
 
+## Star History
+
+<a href="https://star-history.com/#hello-pangea/dnd&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hello-pangea/dnd&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hello-pangea/dnd&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hello-pangea/dnd&type=Date" />
+ </picture>
+</a>
+
 ## Get started 👩‍🏫
 
 Alex Reardon has created [a free course on `egghead.io` 🥚](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) (using [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)) to help you get started with `@yakabod/dnd` as quickly as possible.
@@ -52,7 +62,7 @@ Alex Reardon has created [a free course on `egghead.io` 🥚](https://egghead.io
 - 🌲 Tree support through the [`@atlaskit/tree`](https://atlaskit.atlassian.com/packages/confluence/tree) package
 - A `<Droppable />` list can be a scroll container (without a scrollable parent) or be the child of a scroll container (that also does not have a scrollable parent)
 - Independent nested lists - a list can be a child of another list, but you cannot drag items from the parent list into a child list
-- Server side rendering (SSR) compatible - see [resetServerContext()](/docs/api/reset-server-context.md)
+- Server side rendering (SSR) compatible
 - Plays well with [nested interactive elements](/docs/api/draggable.md#interactive-child-elements-within-a-draggable-) by default
 
 ## Motivation 🤔
@@ -94,7 +104,6 @@ There are a lot of libraries out there that allow for drag and drop interactions
 - [`<DragDropContext />`](/docs/api/drag-drop-context.md) - _Wraps the part of your application you want to have drag and drop enabled for_
 - [`<Droppable />`](/docs/api/droppable.md) - _An area that can be dropped into. Contains `<Draggable />`s_
 - [`<Draggable />`](/docs/api/draggable.md) - _What can be dragged around_
-- [`resetServerContext()`](/docs/api/reset-server-context.md) - _Utility for server side rendering (SSR)_
 
 ### Guides 🗺
 
@@ -118,6 +127,22 @@ There are a lot of libraries out there that allow for drag and drop interactions
 - [Adding `<Draggable />`s during a drag (11.x behaviour)](/docs/guides/changes-while-dragging.md) - _⚠️ Advanced_
 - [Setting up Content Security Policy](/docs/guides/content-security-policy.md)
 
+### Patterns 👷‍
+
+- [Virtual lists 👾](/docs/patterns/virtual-lists.md)
+- [Multi drag](/docs/patterns/multi-drag.md)
+- [Tables](/docs/patterns/tables.md)
+- [Reparenting a `<Draggable />`](/docs/guides/reparenting.md) - _Using our cloning API or your own portal_
+
+### Support 👩‍⚕️
+
+- [Engineering health](/docs/support/engineering-health.md)
+- [Community and addons](/docs/support/community-and-addons.md)
+- [Release notes and changelog](https://github.com/hello-pangea/dnd/releases)
+- [Upgrading](/docs/support/upgrading.md)
+- [Road map](https://github.com/hello-pangea/dnd/issues)
+- [Media](/docs/support/media.md)
+
 ## Creator ✍️
 
 Alex Reardon [@alexandereardon](https://twitter.com/alexandereardon)
@@ -134,3 +159,9 @@ Alex Reardon [@alexandereardon](https://twitter.com/alexandereardon)
 ## Collaborators 🤝
 
 - Bogdan Chadkin [@IAmTrySound](https://twitter.com/IAmTrySound)
+
+## Thanks 🤗
+
+<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
+
+Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.

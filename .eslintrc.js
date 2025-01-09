@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'prettier', 'plugin:prettier/recommended'],
-  plugins: ['prettier', '@emotion', 'react', 'react-hooks', 'import', 'es5'],
+  plugins: ['prettier', 'react', 'react-hooks', 'import', 'es5'],
   parser: '@babel/eslint-parser',
   env: {
     es6: true,
@@ -152,8 +152,6 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     // Allowing the non function setState approach
     'react/no-access-state-in-setstate': 'off',
-    // Causes error suggesting we replace `hydrate` with `hydrateRoot`, which would break tests with React 16 and 17
-    'react/no-deprecated': 'off',
     // Opting out of this
     'react/destructuring-assignment': 'off',
     // Adding 'skipShapeProps' as the rule has issues with correctly handling PropTypes.shape
@@ -198,9 +196,9 @@ module.exports = {
       },
     },
 
-    // NodeJS files
+    // NodeJS files (CommonJS)
     {
-      extends: ['plugin:node/recommended'],
+      extends: ['plugin:n/recommended-script'],
       files: [
         '**/*.eslintrc.js',
         '.stylelintrc.js',
@@ -216,8 +214,9 @@ module.exports = {
       ],
     },
 
+    // NodeJS files (ES Modules)
     {
-      extends: ['plugin:node/recommended-module'],
+      extends: ['plugin:n/recommended-module'],
       parserOptions: {
         project: './tsconfig.json',
         ecmaVersion: 2020,
@@ -228,14 +227,6 @@ module.exports = {
         es6: false,
       },
       files: ['rollup.config.js'],
-      rules: {
-        'node/no-unsupported-features/es-syntax': [
-          'error',
-          {
-            ignores: ['modules'],
-          },
-        ],
-      },
     },
 
     // Typescript files
